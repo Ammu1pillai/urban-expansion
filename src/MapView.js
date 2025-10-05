@@ -127,8 +127,12 @@ function MapView() {
                     <span className="highlight">TIME LAPSE VISUALIZER</span>
                   </h1>
                   <p className="map-subtitle">
-                    Mapping India's Urban Evolution • 2010 to 2025
+                    Mapping India's Urban Evolution • 1985 to 2025
                   </p>
+                  <div className="interaction-prompt">
+                    <span className="pulse-dot"></span>
+                    <span className="prompt-text">Select glowing nodes to explore city development timelines</span>
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -190,6 +194,25 @@ function MapView() {
             </motion.p>
           </div>
         </section>
+
+        <section id="contact" className="section">
+          <div className="container">
+            <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              Get In Touch
+            </motion.h2>
+            <motion.form
+              className="contact-form"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <input type="text" placeholder="Your Name" required />
+              <input type="email" placeholder="Your Email" required />
+              <textarea placeholder="Your Message" rows="5" required />
+              <button type="submit" className="cta-button">Send Message</button>
+            </motion.form>
+          </div>
+        </section>
       </main>
 
       <AnimatePresence>
@@ -229,30 +252,63 @@ function MapView() {
                 ) : (
                   <div className="state-summary full-modal">
                     <h3>State Summary (2011 - 2025)</h3>
-                    <div className="summary-item">
-                      <strong>GDP Growth:</strong>
-                      <ul>
-                        <li>2011: {selectedState.gdp[2010]} USD</li>
-                        <li>2015: {selectedState.gdp[2015]} USD</li>
-                        <li>2020: {selectedState.gdp[2020]} USD</li>
-                        <li>2025: {selectedState.gdp[2025]} USD</li>
-                      </ul>
+                    <div className="summary-content">
+                      {/* GDP Block - Left Side */}
+                      <div className="summary-block gdp-block">
+                        <div className="summary-title">
+                          <strong>GDP Growth</strong>
+                        </div>
+                        <ul className="data-list">
+                          <li className="data-item">
+                            <span className="year">2011:</span>
+                            <span className="value">{selectedState.gdp[2010]} USD</span>
+                          </li>
+                          <li className="data-item">
+                            <span className="year">2015:</span>
+                            <span className="value">{selectedState.gdp[2015]} USD</span>
+                          </li>
+                          <li className="data-item">
+                            <span className="year">2020:</span>
+                            <span className="value">{selectedState.gdp[2020]} USD</span>
+                          </li>
+                          <li className="data-item">
+                            <span className="year">2025:</span>
+                            <span className="value">{selectedState.gdp[2025]} USD</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="summary-block population-block">
+                        <div className="summary-title">
+                          <strong>Population</strong>
+                        </div>
+                        <ul className='data-list'>
+                          <li className='data-item'>
+                            <span className="year">2011:</span>
+                            <span className="value">{selectedState.population[2010]}</span>
+                          </li>
+                          <li className='data-item'>
+                            <span className="year">2015:</span>
+                            <span className="value">{selectedState.population[2015]}</span>
+                          </li>
+                          <li className='data-item'>
+                            <span className="year">2020:</span>
+                            <span className="value">{selectedState.population[2020]}</span>
+                          </li>
+                          <li className='data-item'>
+                            <span className="year">2025:</span>
+                            <span className="value">{selectedState.population[2025]}</span>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                    <div className="summary-item">
-                      <strong>Population:</strong>
-                      <ul>
-                        <li>2011: {selectedState.population[2010]}</li>
-                        <li>2015: {selectedState.population[2015]}</li>
-                        <li>2020: {selectedState.population[2020]}</li>
-                        <li>2025: {selectedState.population[2025]}</li>
-                      </ul>
+                    <div className="modal-footer">
+                      <button
+                        className="cta-button"
+                        onClick={() => window.location.href = '/'}
+                      >
+                        Go Back Home
+                      </button>
                     </div>
-                    <button
-                      className="cta-button"
-                      onClick={() => window.location.href = '/'}
-                    >
-                      Go Back Home
-                    </button>
                   </div>
                 )}
               </div>
