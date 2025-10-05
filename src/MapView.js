@@ -127,7 +127,7 @@ function MapView() {
                     <span className="highlight">TIME LAPSE VISUALIZER</span>
                   </h1>
                   <p className="map-subtitle">
-                    Mapping India's Urban Evolution • 1985 to Present
+                    Mapping India's Urban Evolution • 2010 to 2025
                   </p>
                 </motion.div>
               )}
