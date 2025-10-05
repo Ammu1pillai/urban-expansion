@@ -161,13 +161,19 @@ body {
 .map-title {
   font-size: 4rem;
   line-height: 1;
+
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-size: 4rem;
+  line-height: 1;
+  font-size: 4rem;
+  line-height: 1;
   color: var(--text-light);
   margin: 0;
   padding-top: 0;
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
 }
-
 
 
 .hero-section {
@@ -205,6 +211,45 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.3),
+    0 0 40px rgba(255, 255, 255, 0.2),
+    0 0 60px rgba(255, 255, 255, 0.1);
+  animation: title-glow-pulse 3s ease-in-out infinite;
+}
+
+
+.map-subtitle {
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.map-wrapper {
+  margin-top: 0.8rem !important; /* Keep map in same position */
+}
+
+
+.map-outline {
+  margin: 0 auto !important; /* This keeps the map centered */
+}
+
+.map-title .highlight {
+  background: linear-gradient(135deg, var(--neon-blue) 0%, #00a8cc 50%, #0097b2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 
+    0 0 30px rgba(0, 229, 255, 0.6),
+    0 0 60px rgba(0, 229, 255, 0.4),
+    0 0 90px rgba(0, 229, 255, 0.2);
+  position: relative;
+  animation: neon-flicker 4s ease-in-out infinite;
+}
+
+.map-subtitle {
+  font-size: 1.4rem;
+  color: var(--ash-gray);
+  margin-top: 1rem;
+  box-shadow:
     0 0 20px rgba(255, 255, 255, 0.3),
     0 0 40px rgba(255, 255, 255, 0.2),
     0 0 60px rgba(255, 255, 255, 0.1);
