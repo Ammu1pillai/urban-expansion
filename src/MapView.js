@@ -97,7 +97,16 @@ function MapView() {
                 </div>
                 <span>NASA Urban Visualizer</span>
               </div>
-
+              <div className="flex gap-6 text-sm text-gray-300">
+              <a href="#about" className="hover:text-cyan-400 transition-colors relative group">
+                About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
+              </a>
+              <a href="#data" className="hover:text-cyan-400 transition-colors relative group">
+                Data
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
+              </a>
+            </div>
               <div
                 className={`hamburger ${isMenuOpen ? 'active' : ''}`}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
