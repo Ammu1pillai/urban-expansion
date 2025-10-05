@@ -132,16 +132,6 @@ const LandingPage = () => {
     return colorMap[color] || 'from-blue-500 to-blue-300';
   };
 
-  const getBorderColor = (color) => {
-    const colorMap = {
-      blue: 'border-blue-400/20',
-      purple: 'border-purple-400/20',
-      orange: 'border-orange-400/20',
-      green: 'border-green-400/20'
-    };
-    return colorMap[color] || 'border-blue-400/20';
-  };
-
   const renderGraph = (data, color) => {
     const maxValue = Math.max(...data.values);
     const minValue = Math.min(...data.values);
@@ -371,6 +361,21 @@ const LandingPage = () => {
           <animate attributeName="x1" values="-20%;100%" dur="4.8s" repeatCount="indefinite" begin="3s" />
           <animate attributeName="x2" values="0%;120%" dur="4.8s" repeatCount="indefinite" begin="3s" />
         </line>
+        
+        <line x1="-10%" y1="10%" x2="35%" y2="28%" stroke="url(#shootingGradient1)" strokeWidth="2" strokeLinecap="round" opacity="0.5">
+          <animate attributeName="x1" values="-10%;110%" dur="6s" repeatCount="indefinite" begin="0.5s" />
+          <animate attributeName="x2" values="35%;155%" dur="6s" repeatCount="indefinite" begin="0.5s" />
+        </line>
+        
+        <line x1="-10%" y1="42%" x2="35%" y2="60%" stroke="url(#shootingGradient3)" strokeWidth="2" strokeLinecap="round" opacity="0.5">
+          <animate attributeName="x1" values="-10%;110%" dur="5.5s" repeatCount="indefinite" begin="1.2s" />
+          <animate attributeName="x2" values="35%;155%" dur="5.5s" repeatCount="indefinite" begin="1.2s" />
+        </line>
+        
+        <line x1="-10%" y1="72%" x2="35%" y2="90%" stroke="url(#shootingGradient2)" strokeWidth="2" strokeLinecap="round" opacity="0.5">
+          <animate attributeName="x1" values="-10%;110%" dur="6.2s" repeatCount="indefinite" begin="2s" />
+          <animate attributeName="x2" values="35%;155%" dur="6.2s" repeatCount="indefinite" begin="2s" />
+        </line>
       </svg>
 
       {/* Subtle glow effects */}
@@ -391,15 +396,32 @@ const LandingPage = () => {
               <div className="text-sm font-medium text-gray-400 tracking-wider flex items-center gap-2">
               </div>
             </div>
+            <div className="flex gap-6 text-sm text-gray-300">
+              <a href="#about" className="hover:text-cyan-400 transition-colors relative group">
+                About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
+              </a>
+              <a href="#data" className="hover:text-cyan-400 transition-colors relative group">
+                Data
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
+              </a>
+              <a href="#contact" className="hover:text-cyan-400 transition-colors relative group">
+                Contact
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
+              </a>
+            </div>
           </nav>
         </header>
 
-        {/* Hero Section */}
+        {/* Hero Section with Logo */}
         <section className="max-w-7xl mx-auto px-8 pt-20 pb-16">
           <div className="text-center">
+            {/* 3D Logo Reveal with Liquid Effect */}
             <div className="relative mb-16">
+              {/* Liquid Blob Background */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative">
+                  {/* Animated Liquid Blobs */}
                   <div className="absolute -inset-10">
                     <div className="absolute w-64 h-64 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full animate-liquid-move-1 blur-xl"></div>
                     <div className="absolute w-56 h-56 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full animate-liquid-move-2 blur-xl top-10 left-10"></div>
@@ -408,7 +430,9 @@ const LandingPage = () => {
                 </div>
               </div>
 
+              {/* 3D Logo Container */}
               <div className="relative z-20">
+                {/* Logo with 3D Fly-in */}
                 <div className="relative mb-8 transform-gpu">
                   <div className="animate-logo-3d-flyin">
                     <img 
@@ -420,15 +444,50 @@ const LandingPage = () => {
                       }}
                     />
                   </div>
+                  
+                  {/* 3D Reflection Effect */}
+                  <div className="absolute inset-0 animate-logo-reflection opacity-40">
+                    <img 
+                      src="/logo.png" 
+                      alt=""
+                      className="h-32 mx-auto object-contain transform scale-y-[-1] blur-[2px]"
+                      style={{
+                        maskImage: 'linear-gradient(to bottom, transparent 0%, black 50%)'
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Particle Burst */}
+                  <div className="absolute inset-0 animate-particle-burst">
+                    {Array.from({ length: 12 }).map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute w-2 h-2 bg-cyan-400 rounded-full"
+                        style={{
+                          left: '50%',
+                          top: '50%',
+                          transform: `rotate(${i * 30}deg) translateY(-40px)`,
+                        }}
+                      ></div>
+                    ))}
+                  </div>
                 </div>
 
+                {/* Text Reveal with Liquid Typography */}
                 <div className="relative">
+                  {/* Main Title with Liquid Fill */}
                   <h1 className="text-6xl md:text-7xl font-bold mb-4 relative">
                     <span className="animate-text-liquid-reveal bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 inline-block">
                       Urban Expansion
                     </span>
+                    <div className="absolute inset-0 animate-text-glow opacity-0">
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 inline-block filter blur-md">
+                        Urban Expansion
+                      </span>
+                    </div>
                   </h1>
                   
+                  {/* Subtitle with Wave Animation */}
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-100 mb-8 relative">
                     <span className="animate-text-wave inline-block">
                       Time Lapse
@@ -436,6 +495,11 @@ const LandingPage = () => {
                     <div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 animate-underline-expand"></div>
                   </h2>
                 </div>
+
+                {/* Floating Orbital Elements */}
+                <div className="absolute -top-10 -left-10 w-20 h-20 border-2 border-cyan-400/30 rounded-full animate-orbital-1"></div>
+                <div className="absolute -top-5 -right-5 w-16 h-16 border-2 border-purple-400/30 rounded-full animate-orbital-2"></div>
+                <div className="absolute -bottom-8 left-1/4 w-12 h-12 border-2 border-pink-400/30 rounded-full animate-orbital-3"></div>
               </div>
             </div>
 
@@ -444,13 +508,28 @@ const LandingPage = () => {
               Explore demographic shifts, economic growth, and urban development across all states.
             </p>
 
+            {/* CTA Button */}
             <div className="mb-20 relative">
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="absolute w-32 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent -left-40">
+                  <div className="w-full h-full animate-pulse"></div>
+                </div>
+                <div className="absolute w-32 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent -right-40">
+                  <div className="w-full h-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                </div>
+              </div>
+              
               <button 
                 onClick={() => window.location.href = '/map'}
                 className="group relative inline-flex items-center gap-3 px-12 py-6 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-full text-xl font-bold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_50px_rgba(6,182,212,0.8)] border-2 border-cyan-400/50"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10">View India Map</span>
+                <div className="absolute inset-0 border-2 border-white/30 rounded-full animate-ping"></div>
+                <div className="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-cyan-300"></div>
+                <div className="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-purple-300"></div>
+                <div className="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-purple-300"></div>
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-pink-300"></div>
               </button>
             </div>
           </div>
@@ -498,6 +577,9 @@ const LandingPage = () => {
                     <div className="absolute top-2 right-2 w-6 h-6 border-t-2 border-r-2 border-white/60"></div>
                     <div className="absolute bottom-2 left-2 w-6 h-6 border-b-2 border-l-2 border-white/60"></div>
                     <div className="absolute bottom-2 right-2 w-6 h-6 border-b-2 border-r-2 border-white/60"></div>
+                    
+                    <div className="absolute top-4 left-12 w-16 h-0.5 bg-white/50"></div>
+                    <div className="absolute bottom-4 right-12 w-16 h-0.5 bg-white/50"></div>
                     
                     <div className="relative z-10 mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-transform">
                       {category.icon}
@@ -547,6 +629,7 @@ const LandingPage = () => {
               <div className="relative p-4">
                 <div className="text-4xl font-bold text-cyan-400 mb-2">28</div>
                 <div className="text-sm text-gray-500">States Covered</div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
             </div>
             <div className="relative group">
@@ -554,6 +637,7 @@ const LandingPage = () => {
               <div className="relative p-4">
                 <div className="text-4xl font-bold text-purple-400 mb-2">14</div>
                 <div className="text-sm text-gray-500">Years of Data</div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
             </div>
             <div className="relative group">
@@ -561,6 +645,7 @@ const LandingPage = () => {
               <div className="relative p-4">
                 <div className="text-4xl font-bold text-pink-400 mb-2">100+</div>
                 <div className="text-sm text-gray-500">Cities Analyzed</div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-pink-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
             </div>
             <div className="relative group">
@@ -568,6 +653,7 @@ const LandingPage = () => {
               <div className="relative p-4">
                 <div className="text-4xl font-bold text-green-400 mb-2">2010-24</div>
                 <div className="text-sm text-gray-500">Timeline</div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-green-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
             </div>
           </div>
@@ -588,6 +674,7 @@ const LandingPage = () => {
           0%, 100% { opacity: 0.3; }
           50% { opacity: 1; }
         }
+        /* 3D Logo Fly-in Animation */
         @keyframes logo-3d-flyin {
           0% {
             opacity: 0;
@@ -608,6 +695,33 @@ const LandingPage = () => {
         .animate-logo-3d-flyin {
           animation: logo-3d-flyin 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
+        /* Logo Reflection */
+        @keyframes logo-reflection {
+          0% { opacity: 0; transform: scaleY(-1) translateY(20px); }
+          100% { opacity: 0.4; transform: scaleY(-1) translateY(0); }
+        }
+        .animate-logo-reflection {
+          animation: logo-reflection 1s ease-out 0.5s forwards;
+        }
+        /* Particle Burst */
+        @keyframes particle-burst {
+          0% {
+            opacity: 0;
+            transform: scale(0);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1);
+          }
+          100% {
+            opacity: 0;
+            transform: scale(1.5);
+          }
+        }
+        .animate-particle-burst div {
+          animation: particle-burst 1s ease-out 0.8s forwards;
+        }
+        /* Liquid Text Reveal */
         @keyframes text-liquid-reveal {
           0% {
             clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
@@ -626,6 +740,15 @@ const LandingPage = () => {
           animation: text-liquid-reveal 1.2s ease-out 0.8s forwards;
           opacity: 0;
         }
+        /* Text Glow */
+        @keyframes text-glow {
+          0%, 100% { opacity: 0; }
+          50% { opacity: 0.7; }
+        }
+        .animate-text-glow {
+          animation: text-glow 2s ease-in-out 1.5s infinite;
+        }
+        /* Wave Text Animation */
         @keyframes text-wave {
           0%, 100% { transform: translateY(0); }
           25% { transform: translateY(-5px); }
@@ -634,6 +757,7 @@ const LandingPage = () => {
         .animate-text-wave {
           animation: text-wave 3s ease-in-out infinite;
         }
+        /* Underline Expand */
         @keyframes underline-expand {
           0% { transform: scaleX(0); }
           100% { transform: scaleX(1); }
@@ -642,6 +766,7 @@ const LandingPage = () => {
           animation: underline-expand 1s ease-out 1.2s forwards;
           transform-origin: left;
         }
+        /* Liquid Blob Movements */
         @keyframes liquid-move-1 {
           0%, 100% { transform: translate(0, 0) rotate(0deg); }
           50% { transform: translate(20px, -15px) rotate(180deg); }
@@ -662,6 +787,28 @@ const LandingPage = () => {
         }
         .animate-liquid-move-3 {
           animation: liquid-move-3 10s ease-in-out infinite;
+        }
+        /* Orbital Animations */
+        @keyframes orbital-1 {
+          0% { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+        }
+        @keyframes orbital-2 {
+          0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+        }
+        @keyframes orbital-3 {
+          0% { transform: rotate(0deg) translateX(25px) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(25px) rotate(-360deg); }
+        }
+        .animate-orbital-1 {
+          animation: orbital-1 15s linear infinite;
+        }
+        .animate-orbital-2 {
+          animation: orbital-2 12s linear infinite reverse;
+        }
+        .animate-orbital-3 {
+          animation: orbital-3 18s linear infinite;
         }
       `}</style>
     </div>
