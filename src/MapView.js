@@ -190,25 +190,6 @@ function MapView() {
             </motion.p>
           </div>
         </section>
-
-        <section id="contact" className="section">
-          <div className="container">
-            <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              Get In Touch
-            </motion.h2>
-            <motion.form
-              className="contact-form"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-              <textarea placeholder="Your Message" rows="5" required />
-              <button type="submit" className="cta-button">Send Message</button>
-            </motion.form>
-          </div>
-        </section>
       </main>
 
       <AnimatePresence>
