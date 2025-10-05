@@ -129,10 +129,6 @@ function MapView() {
                   <p className="map-subtitle">
                     Mapping India's Urban Evolution • 1985 to Present
                   </p>
-                  <div className="interaction-prompt">
-                    <span className="pulse-dot"></span>
-                    <span className="prompt-text">Select glowing nodes to explore city development timelines</span>
-                  </div>
                 </motion.div>
               )}
             </AnimatePresence>

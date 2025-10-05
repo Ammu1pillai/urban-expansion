@@ -18,7 +18,7 @@ body {
   font-family: 'Arial', sans-serif;
   background: var(--pure-black);
   color: var(--text-light);
-  line-height: 1.6;
+  line-height: 1.8;
   overflow-x: hidden;
 }
 
@@ -90,12 +90,6 @@ body {
   align-items: center;
 }
 
-.nav-menu {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
 .nav-link {
   color: var(--ash-gray);
   text-decoration: none;
@@ -103,6 +97,13 @@ body {
   cursor: pointer;
   transition: color 0.3s ease;
   position: relative;
+  line-height: 1.6; /* Added line height */
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 .nav-link:hover {
@@ -134,7 +135,7 @@ body {
   justify-content: center;
   position: relative;
   background: var(--pure-black);
-  padding: 150px 2rem 2rem;
+  padding: 120px 2rem 2rem;
   overflow: hidden;
 }
 
@@ -146,33 +147,84 @@ body {
   width: 100%;
   max-width: 1200px;
   flex-grow: 1;
+  gap: 1rem;
 }
+
+
 
 .title-block {
   text-align: center;
+  margin-bottom: 1rem;
+  padding-top: 20px;
 }
 
 .map-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   line-height: 1.1;
   color: var(--text-light);
   margin: 0;
-  padding-top: 50px;
+  padding-top: 0;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+/* === FIX TITLE POSITION - MOVE DOWN CLOSER TO MAP === */
+
+.hero-section {
+  padding-top: 100px !important;
+  justify-content: flex-start !important;
+}
+
+.hero-content-wrapper {
+  gap: 0.8rem !important;
+  justify-content: flex-start !important;
+}
+
+.title-block {
+  margin-bottom: 0.5rem !important;
+  padding-top: 0 !important;
+  transform: translateY(0) !important; /* Reset any transforms */
+}
+
+.map-title {
+  margin-bottom: 0.3rem !important;
+}
+
+.map-subtitle {
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+
+.map-wrapper {
+  margin-top: 0.8rem !important; /* Keep map in same position */
+}
+
+/* Ensure the map stays exactly where it was */
+.map-outline {
+  margin: 0 auto !important; /* This keeps the map centered */
 }
 
 .map-title .highlight {
   color: var(--neon-blue);
+  background: linear-gradient(135deg, var(--neon-blue), #0099cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .map-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--ash-gray);
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
 }
 
 .map-wrapper {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .map-outline {
@@ -234,6 +286,16 @@ body {
   border: 1px solid var(--neon-blue);
   font-weight: 500;
   z-index: 11;
+}
+
+.interaction-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  color: var(--ash-gray);
+  font-size: 0.9rem;
 }
 
 .state-marker:hover .dot {
