@@ -195,8 +195,6 @@ const LandingPage = () => {
           <nav className="flex justify-between items-center max-w-7xl mx-auto">
             <div className="flex items-center gap-8">
               <div className="text-sm font-medium text-gray-400 tracking-wider flex items-center gap-2">
-                <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
-                UETL 2024
               </div>
             </div>
             <div className="flex gap-6 text-sm text-gray-300">
