@@ -396,20 +396,6 @@ const LandingPage = () => {
               <div className="text-sm font-medium text-gray-400 tracking-wider flex items-center gap-2">
               </div>
             </div>
-            <div className="flex gap-6 text-sm text-gray-300">
-              <a href="#about" className="hover:text-cyan-400 transition-colors relative group">
-                About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
-              </a>
-              <a href="#data" className="hover:text-cyan-400 transition-colors relative group">
-                Data
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
-              </a>
-              <a href="#contact" className="hover:text-cyan-400 transition-colors relative group">
-                Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
-              </a>
-            </div>
           </nav>
         </header>
 
